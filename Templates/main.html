@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic Metas-->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
+  <!-- Site Metas -->
+  <link rel="icon" href="#" type="image/gif" />
+  <title>FSM WebSite</title>
+  <!-- StyleSheet -->
+  <link href="Templates/mainstyle.css" rel="stylesheet" />
+</head>
+<style>
+
+</style>
+<body>
+  <!-- header section strats -->
+  <header class="header_section">
+      <div class="container-fluid-1">
+        <div class="navbar">
+          <div class="btn-group" style="width:100%">
+            <button style="width:34%" id="link-1"><span>Verlog</span></button>
+            <button style="width:32%" id="link-2"><span>Cpp</span></button>
+            <button style="width:34%" id="link-3"><span>Graph</span></button>
+          </div>
+        </div>
+      </div>
+  </header>
+  <!-- end header section -->
+  <div style="padding-top:58px"></div>
+  <!-- Verlog body -->
+  <div id="verbody">
+    <!-- Left -->
+      <div class="verdiv1">
+        <textarea rows="32" cols="90" style="resize:none" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" class="textarea1">Code Goes here</textarea>
+        <div class="verbtnrun">
+          <button class="verbtn3">Compile</button>
+        </div>
+      </div>
+      <form method="POST" enctype="multipart/form-data">
+        <div >
+          {% csrf_token %} 
+          <input type="file" id="myFile" class="files" name="filename" value="Upload File">
+          <input type="Submit" value="Upload">
+        </div>
+      </form>
+    <!-- left -->
+    <!-- right -->
+    <div class="verdiv2">
+      <div class="verdiv2text"><strong>Console Output</strong></div>
+      <textarea rows="14" cols="84" style="resize:none" readonly class="textarea2">Console's output is shown here.</textarea>
+    </div>
+    <div class="verdiv3">
+      <div class="verdiv3text"><strong>Generated Output Files</strong></div>
+      <div class="verdiv3file">
+        <ul>
+          {% for d in dfiles %}
+            <li><a href="download/{{d}}" method="POST" > {{d}} </a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <!-- right -->
+  </div>
+
+  <!-- cpp body -->
+  <div id="cbody"></div>
+
+  <!-- graph body -->
+  <div id="grbody"></div>
+
+  <!-- Script Attachment -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                // Hide div 2, 3 and show div 1 by default 
+                $('#grbody').hide();
+                $('#cbody').hide();
+                $('#verbody').show();
+
+                $('#link-1').click(function () {
+                    $('#verbody').show();
+                    $('#cbody').hide();
+                    $('#grbody').hide();
+                });
+                
+                $('#link-2').click(function () {
+                    $('#verbody').hide();
+                    $('#cbody').show();
+                    $('#grbody').hide();
+                });
+                
+                $('#link-3').click(function () {
+                    $('#verbody').hide();
+                    $('#cbody').hide();
+                    $('#grbody').show();
+                });             
+            });
+        </script>
+</body>
+
+</html>
