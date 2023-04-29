@@ -35,9 +35,9 @@
   <div id="verbody">
     <!-- Left -->
       <div class="verdiv1">
-        <textarea rows="32" cols="90" style="resize:none" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" class="textarea1">Code Goes here</textarea>
+        <textarea rows="32" cols="90" style="resize:none" onfocus="if(this.value==this.defaultValue)this.value={{content}};" onblur="if(this.value=='')this.value=this.defaultValue;" class="textarea1">{{content}}</textarea>
         <div class="verbtnrun">
-          <button class="verbtn3">Compile</button>
+          <button class="verbtn3" onclick="location.href='{% url 'compile' %}'">Compile</button>
         </div>
       </div>
       <form method="POST" enctype="multipart/form-data">
