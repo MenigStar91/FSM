@@ -11,7 +11,7 @@
   <link rel="icon" href="#" type="image/gif" />
   <title>FSM WebSite</title>
   <!-- StyleSheet -->
-  <link href="Templates/mainstyle.css" rel="stylesheet" />
+  <link href="Templates/mainstyle.css?{% now 'U' %}" rel="stylesheet" />
 </head>
 <style>
 
@@ -22,7 +22,7 @@
       <div class="container-fluid-1">
         <div class="navbar">
           <div class="btn-group" style="width:100%">
-            <button style="width:34%" id="link-1"><span>Verlog</span></button>
+            <button style="width:34%" id="link-1"><span>Verilog</span></button>
             <button style="width:32%" id="link-2"><span>Cpp</span></button>
             <button style="width:34%" id="link-3"><span>Graph</span></button>
           </div>
@@ -42,7 +42,7 @@
       </div>
       <form method="POST" enctype="multipart/form-data">
         <div >
-          {% csrf_token %} 
+          {% csrf_token %}
           <input type="file" id="myFile" class="files" name="filename" value="Upload File">
           <input type="Submit" value="Upload">
         </div>
@@ -50,8 +50,8 @@
     <!-- left -->
     <!-- right -->
     <div class="verdiv2">
-      <div class="verdiv2text"><strong>Console Output</strong></div>
-      <textarea rows="14" cols="84" style="resize:none" readonly class="textarea2">Console's output is shown here.</textarea>
+      <div class="verdiv2text"><strong>Program Status</strong></div>
+      <textarea rows="14" cols="84" style="resize:none" readonly class="textarea2">{{console}}</textarea>
     </div>
     <div class="verdiv3">
       <div class="verdiv3text"><strong>Generated Output Files</strong></div>
@@ -67,7 +67,21 @@
   </div>
 
   <!-- cpp body -->
-  <div id="cbody"></div>
+  <div id="cbody">
+
+    <form method="POST" enctype="multipart/form-data">
+      <div>
+        {% csrf_token %} 
+        <input type="file" id="myFile2" class="files2" name="filename" value="Upload File" >
+        <input type="Submit" value="Upload" class="files2">
+      </div>
+    </form>
+
+    <div class="cdiv1">
+      <p>current file :  <li><a href="download/{{cfile}}" method="POST" > {{cfile}} </a></li></p>
+    </div>
+
+  </div>
 
   <!-- graph body -->
   <div id="grbody"></div>

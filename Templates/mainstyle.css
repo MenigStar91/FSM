@@ -195,6 +195,62 @@ input[type=submit]:hover {
     height:10%;
     margin:10px;
 }
+
+
+input.files2[type=file] {
+    
+    left:30%;
+    right:30%;
+    top:30%;
+    max-width: 100%;
+    height : 10%;
+    color: #0a0a0a;
+    padding: 5px;
+    background: rgba(218, 165, 32, 0.30);
+    border-radius: 10px;
+    border: 1px solid #000000;
+    
+}
+
+input.files2[type=file]::file-selector-button {
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    border: none;
+    background: #084cdf;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+}
+
+input.files2[type=submit]{
+    transition: background .2s ease-in-out;
+    font-size: medium;
+    position:absolute;
+    left: 45%;
+    right : 45%;
+    top: 50%;
+    max-width: 100%;
+    color: black;
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: rgba(255, 255, 255,1);
+    border-radius: 5px;
+    border: 1px solid black;
+    display : block;
+}
+
+.cdiv1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
 .verdiv3{
     position:absolute;
     padding-top: 50px;
