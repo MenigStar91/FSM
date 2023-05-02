@@ -1,6 +1,15 @@
 # FSM
 This project involves the development of a web application for hardware design analysis using Django . The purpose of the application is to provide users a platform for analyzing and evaluating different aspects of hardware designs for finite state machines into the main output file.We built this application using Django, as it being the most scalable and flexible application using python language.
 
+# Installation
+```
+ - python -m pip install -U pip
+ - pip install virtualenv
+ - virtualenv env_site
+ - cd env_site
+ - cd Scripts
+ - pip install django
+```
 # Setup 
 Setting up the virtual environment for Django for backend
 Installing the necessary libraries 
